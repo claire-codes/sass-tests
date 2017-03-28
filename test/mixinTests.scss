@@ -1,0 +1,14 @@
+@import "true";
+
+@include test-module('Ahoy Matey') {
+  @include test('Shiver my timbers') {
+    $s: true;
+
+    @include assert-true($s, 'Number should be symmetrical');
+  }
+  @include test('Failing Shiver my timbers') {
+    $s: false;
+
+    @include assert-true($s, 'Number should be symmetrical');
+  }
+}
