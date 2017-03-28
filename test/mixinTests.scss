@@ -1,14 +1,18 @@
+@import "../scss/mixins";
 @import "true";
 
-@include test-module('Ahoy Matey') {
-  @include test('Shiver my timbers') {
-    $s: true;
-
-    @include assert-true($s, 'Number should be symmetrical');
-  }
-  @include test('Failing Shiver my timbers') {
-    $s: false;
-
-    @include assert-true($s, 'Number should be symmetrical');
-  }
+@include test-module ('Ahoy Matey') {
+    @include test ('@mixin border-radius') {
+        @include assert {
+             @include output{
+                @include border-radius(5px);
+            }
+            @include expect {
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                -ms-border-radius: 5px;
+                border-radius: 5px;
+            }
+        }
+    }
 }
