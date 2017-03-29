@@ -1,6 +1,3 @@
-@import "../scss/mixins";
-@import "true";
-
 @include test-module ('Ahoy Matey') {
     @include test ('@mixin border-radius') {
         @include assert {
