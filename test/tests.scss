@@ -2,7 +2,9 @@
 @import "true";
 
 // Code to test
+@import "../scss/functions";
 @import "../scss/mixins";
 
 // Test files
+@import 'functionTests';
 @import 'mixinTests';

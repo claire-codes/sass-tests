@@ -1,4 +1,4 @@
-@include test-module ('Ahoy Matey') {
+@include test-module ('Mixin Tests Matey') {
     @include test ('@mixin border-radius') {
         @include assert {
              @include output{

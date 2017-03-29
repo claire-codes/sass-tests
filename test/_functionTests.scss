@@ -1,0 +1,19 @@
+@include test-module ('Function Tests Matey') {
+    @include test ('@function em') {
+        $test: em(16);
+        $expect: "1em";
+        @include assert-equal($test, $expect, 'Converts px to em')
+    }
+
+    // Possiblly mixing test contexts here
+    @include test ('@function em in a selector') {
+        @include assert {
+             @include output{
+                font-size: em(32);
+            }
+            @include expect {
+                font-size: 2em;
+            }
+        }
+    }
+}
