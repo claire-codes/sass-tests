@@ -13,3 +13,35 @@
         }
     }
 }
+
+
+@include test-module ('Grey mixin test') {
+    @include test ('@mixin grey happy path') {
+        @include assert {
+            @include output {
+                @include grey(2f);
+            }
+            @include expect {
+                color: #2f2f2f;
+            }
+        }
+    }
+    @include test ('@mixin grey unhappy path') {
+        @include assert {
+            @include output {
+                @include grey('abc');
+            }
+            @include expect {
+                @warn "Mate";
+            }
+        }
+        @include assert {
+            @include output {
+                @include grey(#242526);
+            }
+            @include expect {
+                @warn "Mate";
+            }
+        }
+    }
+}

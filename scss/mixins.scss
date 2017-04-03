@@ -4,3 +4,12 @@
       -ms-border-radius: $radius;
           border-radius: $radius;
 }
+
+
+@mixin grey($g) {
+    @if type-of($g) == number {
+        color: unquote("##{$g}#{$g}#{$g}");
+    } @else {
+        @warn "Mate";
+    }
+}
