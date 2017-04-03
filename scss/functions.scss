@@ -3,3 +3,7 @@ $browser-context: 16; // Default
 @function em($pixels, $context: $browser-context) {
   @return #{$pixels/$context}em;
 }
+
+@function greyFn($g) {
+    @return unquote("##{$g}#{$g}#{$g}");
+}
