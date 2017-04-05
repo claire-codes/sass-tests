@@ -17,9 +17,9 @@
         }
     }
 
-    @include test ('@function greyFn') {
-        $test: greyFn(3f);
-        $expect: #3f3f3f;
-        @include assert-equal($test, $expect, 'Maketh grey colour')
-    }
+    // @include test ('@function greyFn') {
+    //     $test: greyFn(3f);
+    //     $expect: #3f3f3f;
+    //     @include assert-equal($test, $expect, 'Maketh grey colour')
+    // }
 }
