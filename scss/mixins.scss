@@ -13,3 +13,16 @@
         @warn "Mate";
     }
 }
+
+@mixin screen-edge($parent-width) {
+    @if $parent-width >= 0% and $parent-width <= 100% {
+        // Assume width is %
+        $distance-to-edge: (100% - $parent-width) / 2;
+        padding-left: $distance-to-edge;
+        margin-left: $distance-to-edge * -1;
+        padding-right: $distance-to-edge;
+        margin-right: $distance-to-edge * -1;
+    } @else {
+        @warn "Must be between 0 and 100%";
+    }
+}

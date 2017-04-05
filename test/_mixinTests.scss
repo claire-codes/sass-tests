@@ -45,3 +45,48 @@
         }
     }
 }
+
+@include test-module ('Screen-edge tests') {
+    @include test ('happy paths') {
+        @include assert {
+            @include output {
+                @include screen-edge(90%);
+            }
+            @include expect {
+                padding-left: 5%;
+                margin-left: -5%;
+                padding-right: 5%;
+                margin-right: -5%;
+            }
+        }
+        @include assert {
+            @include output {
+                @include screen-edge(100%);
+            }
+            @include expect {
+                padding-left: 0%;
+                margin-left: 0%;
+                padding-right: 0%;
+                margin-right: 0%;
+            }
+        }
+    }
+    @include test ('unhappy paths') {
+        @include assert {
+            @include output {
+                @include screen-edge(101%);
+            }
+            @include expect {
+                @warn "Must be between 0 and 100%";
+            }
+        }
+        @include assert {
+            @include output {
+                @include screen-edge(-1%);
+            }
+            @include expect {
+                @warn "Must be between 0 and 100%";
+            }
+        }
+    }
+}
