@@ -14,5 +14,9 @@
     "mocha": "^3.2.0",
     "node-sass": "^4.5.1",
     "sass-true": "^2.2.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^4.3.0"
   }
 }
