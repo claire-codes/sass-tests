@@ -1,0 +1,12 @@
+@mixin default-focus-highlight() {
+    @content;
+    outline-width: 2px;
+    outline-style: solid;
+    outline-color: Highlight;
+
+    @media (-webkit-min-device-pixel-ratio:0) {
+        @content;
+        outline-color: -webkit-focus-ring-color;
+        outline-style: auto;
+    }
+}

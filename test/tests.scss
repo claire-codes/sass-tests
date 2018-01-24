@@ -4,7 +4,9 @@
 // Code to test
 @import "../scss/functions";
 @import "../scss/mixins";
+@import "../scss/contentMixin";
 
 // Test files
 @import 'functionTests';
 @import 'mixinTests';
+@import 'contentMixinTests';

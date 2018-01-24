@@ -1,0 +1,29 @@
+// This won't work because I can't work out how to test for media queries with sass-true :(
+
+// @include test-module ('Media query content mixin') {
+//     @include test ('@mixin default-focus-highlight') {
+//         @include assert {
+//              @include output {
+//                  font-size: 32px;
+//                  height: 20px;
+//                  width: 20px;
+//                  @include default-focus-highlight();
+//             }
+//             @include expect {
+//                     font-size: 32px;
+//                     height: 20px;
+//                     width: 20px;
+//                     outline-width: 2px;
+//                     outline-style: solid;
+//                     outline-color: Highlight;
+//             }
+//             @include expect {
+//                     font-size: 32px;
+//                     height: 20px;
+//                     width: 20px;
+//                     outline-color: -webkit-focus-ring-color;
+//                     outline-style: auto;
+//             }
+//         }
+//     }
+// }
