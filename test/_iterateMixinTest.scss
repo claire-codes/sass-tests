@@ -1,0 +1,25 @@
+// Alas this doesn't work because I don't think True allows you to test selectors
+
+// @include test-module ('List Iterating to Create Dynamic Selctors') {
+//     @include test ('@mixin colouredSelector') {
+//         @include assert {
+//              @include output {
+//                 $myList: 'red','orange','yellow';
+//                 @include colouredSelector($myList, '.button');
+//             }
+//             @include expect {
+//                 .button:nth-child(1n) {
+//                   color: red;
+//                 }
+//
+//                 .button:nth-child(2n) {
+//                   color: orange;
+//                 }
+//
+//                 .button:nth-child(3n) {
+//                   color: yellow;
+//                 }
+//             }
+//         }
+//     }
+// }

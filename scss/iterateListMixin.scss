@@ -1,0 +1,13 @@
+$myList: 'red','orange','yellow';
+
+@mixin colouredSelector($colourList, $selector) {
+  @each $item in $myList {
+    #{$selector} {
+      &:nth-child(#{index($myList, $item)}n) {
+        color: #{$item};
+      }
+    }
+  }
+}
+
+@include colouredSelector($myList, '.button');
