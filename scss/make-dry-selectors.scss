@@ -1,0 +1,92 @@
+// I'm not even going to pretend to test this.
+// This is an example I wrote on SassMeister to dry out this piece of code:
+
+$color-apple: green;
+$color-lemon: yellow;
+$color-strawberry: red;
+
+
+.apple-button {
+  background-color: $color-apple;
+}
+
+.strawberry-button {
+  background-color: $color-strawberry;
+}
+
+.lemon-button {
+  background-color: $color-lemon;
+}
+
+// This compiles to:
+// .apple-button {
+//   background-color: green;
+// }
+//
+// .strawberry-button {
+//   background-color: red;
+// }
+//
+// .lemon-button {
+//   background-color: yellow;
+// }
+
+// This does not scale well and is repetitive. We can reduce repetition with Sass maps.
+
+$fruit-map: (
+  apple: green,
+  lemon: yellow,
+  strawberry: red
+);
+
+@each $fruit, $fruit-colour in $fruit-map {
+  .#{$fruit}-button--dry {
+    background-color: #{$fruit-colour};
+  }
+}
+
+// This compiles to:
+// .apple-button--dry {
+//   background-color: green;
+// }
+//
+// .lemon-button--dry {
+//   background-color: yellow;
+// }
+//
+// .strawberry-button--dry {
+//   background-color: red;
+// }
+
+// We can extend this further by storing multiple variables in the map, for example two colours:
+
+$fruitier-map: (
+  apple: (green, blue),
+  lemon: (yellow, orange),
+  strawberry: (red, magenta)
+);
+
+@each $fruit, $fruit-colours in $fruitier-map {
+  $bg-colour: nth($fruit-colours, 1);
+  $font-colour: nth($fruit-colours, 2);
+  .#{$fruit}-button--fruitier {
+    background-color: #{$bg-colour};
+    color: #{$font-colour};
+  }
+}
+
+// Which compiles to:
+// .apple-button--fruitier {
+//   background-color: green;
+//   color: blue;
+// }
+//
+// .lemon-button--fruitier {
+//   background-color: yellow;
+//   color: orange;
+// }
+//
+// .strawberry-button--fruitier {
+//   background-color: red;
+//   color: magenta;
+// }
