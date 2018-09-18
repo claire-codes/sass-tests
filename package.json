@@ -11,12 +11,12 @@
   "author": "Claire Parker <claire.parker87@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "mocha": "^3.2.0",
+    "mocha": "^5.2.0",
     "node-sass": "^4.5.1",
-    "sass-true": "^2.2.1"
+    "sass-true": "^4.0.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-mocha": "^4.3.0"
+    "gulp-mocha": "^6.0.0"
   }
 }
